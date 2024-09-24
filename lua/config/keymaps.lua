@@ -14,9 +14,20 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map("n", "<leader>gd",
-  function()
-    Util.float_term({ "lazydocker", "-f", Util.get_root() .. "docker-compose.yml" },
-      { cwd = Util.get_root(), esc_esc = false })
-  end,
-  { desc = "LazyDocker (root dir)" })
+map("n", "<leader>gd", function()
+  Util.float_term(
+    { "lazydocker", "-f", Util.get_root() .. "docker-compose.yml" },
+    { cwd = Util.get_root(), esc_esc = false }
+  )
+end, { desc = "LazyDocker (root dir)" })
+
+map("i", "jk", "<Esc>")
+map("n", "J", "5j", { desc = "Move 5 lines down" })
+map("n", "K", "5k", { desc = "Move 5 lines up" })
+map("n", "<leader>j", "J", { desc = "Join lines" })
+-- map("n", "<leader>k", "K")
+
+map("n", "<leader>bw", ":w<enter>", { desc = "Write Buffer (Save)" })
+map("n", "<leader>W", ":w<enter>", { desc = "Write Buffer (Save)" })
+-- map("n", "<leader>w<leader>", ":w<enter>", { desc = "Write Buffer (Save)" })
+-- map("n", "<leader>w", ":w<enter>", { desc = "Write Buffer (Save)" })
