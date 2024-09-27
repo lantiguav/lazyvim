@@ -26,8 +26,16 @@ map("n", "J", "5j", { desc = "Move 5 lines down" })
 map("n", "K", "5k", { desc = "Move 5 lines up" })
 map("n", "<leader>j", "J", { desc = "Join lines" })
 -- map("n", "<leader>k", "K")
-
 map("n", "<leader>bw", ":w<enter>", { desc = "Write Buffer (Save)" })
 map("n", "<leader>W", ":w<enter>", { desc = "Write Buffer (Save)" })
 -- map("n", "<leader>w<leader>", ":w<enter>", { desc = "Write Buffer (Save)" })
 -- map("n", "<leader>w", ":w<enter>", { desc = "Write Buffer (Save)" })
+
+map("n", "<C-u>", "<C-u>zz")
+map("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.del({ "n", "i", "v" }, "<c-s>")
+
+-- disable mouse click, but allow scrolling
+map({ "i", "n", "v" }, "<LeftMouse>", "<Nop>")
+-- disable double click
+map({ "i", "n", "v" }, "<2-LeftMouse>", "<Nop>")
