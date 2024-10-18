@@ -21,3 +21,6 @@ local filename = get_filename(vim.fn.expand("%"))
 vim.opt.winbar = " " .. filename .. " %m %=%l:%v "
 
 -- vim.opt.winbar = "%=%m %f"
+
+-- Disable LazyVim auto format
+vim.g.autoformat = false
