@@ -24,3 +24,14 @@ vim.opt.winbar = " " .. filename .. " %m %=%l:%v "
 
 -- Disable LazyVim auto format
 vim.g.autoformat = false
+
+-- TODO: Figure out how to make this work
+vim.o.exrc = true
+vim.opt.exrc = true
+vim.g.blade_nav = {
+  laravel_components = {
+    "resources/views/storyblok",
+    "resources/views/treasury"
+  },
+}
+
