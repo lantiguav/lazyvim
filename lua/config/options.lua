@@ -30,7 +30,6 @@ vim.o.exrc = true
 vim.opt.exrc = true
 vim.g.blade_nav = {
   laravel_components = {
-    "resources/views/storyblok",
     "resources/views/treasury"
   },
 }
