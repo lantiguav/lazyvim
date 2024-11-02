@@ -1,0 +1,36 @@
+{
+  "Tailwind merge": {
+    "prefix": "twm",
+    "description": "Add Tailwind merge",
+    "body": [
+      "{{ \\$attributes->withoutTwMergeClasses()->twMerge(Arr::toCssClasses([",
+        "\t'${1}',$0",
+      "]))}}"
+    ]
+  },
+  "Tailwind merge for": {
+    "prefix": "twmf",
+    "description": "Add Tailwind merge for",
+    "body": [
+      "{{ \\$attributes->twMergeFor('${1}', Arr::toCssClasses([",
+        "\t'${2}',$0",
+      "]))}}"
+    ]
+  },
+  "Include tracking": {
+    "prefix": "intrack",
+    "description": "Add tracking",
+    "body": [
+      "@includeWhen(${1:\\$enableTracking}, 'components.tracking-attributes', [",
+          "\t'track' => '${2:click}',",
+          "\t'outcome' => ${3:''},",
+          "\t'type' => '${4:link}',",
+          "\t'location' => ${5:\\$trackingLocation},",
+          "\t'position' => ${6:\\$trackingPosition},",
+          "\t'name' => ${7:''},",
+          "\t'text' => ${8:''},",
+      "])$0"
+    ]
+  }
+}
+
