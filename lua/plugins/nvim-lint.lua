@@ -1,3 +1,5 @@
+local HOME = os.getenv("HOME")
+
 return {
   "mfussenegger/nvim-lint",
   event = "LazyFile",
@@ -17,6 +19,9 @@ return {
     -- or add custom linters.
     ---@type table<string,table>
     linters = {
+      ["markdownlint-cli2"] = {
+        args = { "--config", HOME .. "/.markdownlint-cli2.yaml", "--" },
+      },
       -- -- Example of using selene only when a selene.toml file is present
       -- selene = {
       --   -- `condition` is another LazyVim extension that allows you to
